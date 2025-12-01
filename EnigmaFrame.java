@@ -71,5 +71,28 @@ public class EnigmaFrame extends JFrame {
     }
 
 
-    
+    private class CoverterActionListener implements ActionListener {
+
+         public void actionPerformed(ActionEvent e) {
+
+            String in = inner.getSelectedItem().toString();
+            String mid = middle.getSelectedItem().toString();
+            String ou = out.getSelectedItem().toString();
+            String pros = process.getText();
+            String inpu = input.getText();
+            String[] input;
+            String cmd = e.getActionCommand();
+            if (cmd.equals("Encryt")) {
+             input = new String[] {in, mid, ou, pros, "encrypt", inpu};
+            
+            }
+            else{
+             input = new String[] {in, mid, ou, pros, "decrypt", inpu};
+            
+            }
+            String result = Comms.run(input);
+            output.setText(result);
+         }
+    }
+
 }

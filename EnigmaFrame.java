@@ -57,7 +57,19 @@ public class EnigmaFrame extends JFrame {
         lpanel.add(new JLabel("Output"));
         lpanel.add(output);
         //add the same action listener for all
+        CoverterActionListener a = new CoverterActionListener();
+        encrypt.addActionListener(a);
+        decrypt.addActionListener(a);
         
+        tpanel.add(dpanel, BorderLayout.NORTH);
+        tpanel.add(rpanel, BorderLayout.CENTER);
+        tpanel.add(lpanel, BorderLayout.SOUTH);   
+        
+       this.add(tpanel);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.pack();
     }
 
+
+    
 }

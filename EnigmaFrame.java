@@ -75,9 +75,9 @@ public class EnigmaFrame extends JFrame {
 
          public void actionPerformed(ActionEvent e) {
 
-            String in = inner.getSelectedItem().toString();
-            String mid = middle.getSelectedItem().toString();
-            String ou = out.getSelectedItem().toString();
+            String in  = String.valueOf(inner.getSelectedIndex() + 1);
+            String mid = String.valueOf(middle.getSelectedIndex() + 1);
+            String ou  = String.valueOf(out.getSelectedIndex() + 1);
             String pros = process.getText();
             String inpu = input.getText();
             String[] input;
